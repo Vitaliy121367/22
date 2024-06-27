@@ -31,10 +31,26 @@ Pharmacy::~Pharmacy()
 
 void Pharmacy::setName(const char* name)
 {
+    if (strlen(name) >= 2)
+    {
+        delete[] m_name;
+
+        int sizeT = strlen(name) + 1;
+        m_name = new char[sizeT];
+        strcpy_s(m_name, sizeT, name);
+    }
 }
 
 void Pharmacy::setAddress(const char* address)
 {
+    if (strlen(address) >= 2)
+    {
+        delete[] m_address;
+
+        int sizeT = strlen(address) + 1;
+        m_address = new char[sizeT];
+        strcpy_s(m_address, sizeT, address);
+    }
 }
 
 const char* Pharmacy::getName() const
@@ -76,4 +92,16 @@ void Pharmacy::sortMedByTitle()
     sort_if<Medicine>(m_arrMed, m_sizeMed, [](Medicine a, Medicine b) {
         return strcmp(a.getTitle(),b.getTitle())>0;
         });
+}
+
+void Pharmacy::showInfo() const
+{
+    cout << "\tPharm: " << m_name << endl;
+    cout << "\tAddress: " << m_address << endl;
+    cout << "\tSize Med: " << m_sizeMed << endl;
+    for (int i = 0; i < m_sizeMed; i++)
+    {
+        cout << "\t#" << i + 1 << " medicine\n";
+        m_arrMed[i].showInfo();
+    }
 }

@@ -10,7 +10,7 @@ class Pharmacy
 	Medicine* m_arrMed;
 public:
 	Pharmacy();
-	Pharmacy(const char* name, const char* address);
+	Pharmacy(const char* name, const char* address);	
 	~Pharmacy();
 
 	void setName(const char* name);
@@ -23,5 +23,7 @@ public:
 	void findMedByTitle(const char* title)const;
 	void sortMedByPrice();
 	void sortMedByTitle();
+
+	void showInfo()const;
 };
 
