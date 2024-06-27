@@ -22,12 +22,12 @@ void Pharmacy::setAddress(const char* address)
 
 const char* Pharmacy::getName() const
 {
-    return nullptr;
+    return m_name;
 }
 
 const char* Pharmacy::getAddress() const
 {
-    return nullptr;
+    return m_address;
 }
 
 void Pharmacy::addMedicine(Medicine obj)

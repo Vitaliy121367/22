@@ -1,5 +1,6 @@
 #pragma once
 #include "Medicine.h"
+#include "ArrayTemplate.h"
 
 class Pharmacy
 {
