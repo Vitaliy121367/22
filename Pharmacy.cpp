@@ -49,16 +49,31 @@ const char* Pharmacy::getAddress() const
 
 void Pharmacy::addMedicine(Medicine obj)
 {
+    addItemBack(m_arrMed, m_sizeMed, obj);
 }
 
 void Pharmacy::findMedByTitle(const char* title) const
 {
+    for (int i = 0; i < m_sizeMed; i++)
+    {
+        if (strcmp(title, m_arrMed[i].getTitle()) == 0) {
+            m_arrMed[i].showInfo();
+            return;
+        }
+    }
+    cout << "Not found: " << title << endl;
 }
 
 void Pharmacy::sortMedByPrice()
 {
+    sort_if<Medicine>(m_arrMed, m_sizeMed, [](Medicine a, Medicine b) {
+        return a.getPrice() > b.getPrice();
+    });
 }
 
 void Pharmacy::sortMedByTitle()
 {
+    sort_if<Medicine>(m_arrMed, m_sizeMed, [](Medicine a, Medicine b) {
+        return strcmp(a.getTitle(),b.getTitle())>0;
+        });
 }
