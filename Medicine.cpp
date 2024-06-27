@@ -108,5 +108,5 @@ void Medicine::showInfo() const
         break;
     }
     cout << "Contry: " << m_country << endl;
-    cout << "Price: " << m_price << "UAH.\n\n";
+    cout << "Price: " << m_price << " UAH.\n\n";
 }
