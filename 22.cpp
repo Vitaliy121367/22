@@ -19,7 +19,7 @@ int main()
     Medicine c("Nurofen",TYPES::capsules,"Italy",34.56);
     const Medicine d("Dr. MOM", TYPES::syrope, "France", 150.70);
 
-    a.showInfo();
+    /*a.showInfo();
     b.showInfo();
     c.showInfo();
 
@@ -32,6 +32,15 @@ int main()
 
     b.showInfo();
     k.showInfo();
+
+    cout << "-------------------------------------------------------\n\n";
+
+    a = d;
+    a.setCountry("Idia");
+    a.setPrice(200.45);
+
+    a.showInfo();
+    d.showInfo();*/
 
     return 0;
 }
