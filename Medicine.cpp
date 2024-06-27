@@ -23,6 +23,21 @@ Medicine::Medicine(const char* title, TYPES type, const char* country, float pri
     m_price = price;
 }
 
+Medicine::Medicine(const Medicine& copy_obj)
+{
+    int sizeT = strlen(copy_obj.m_title) + 1;
+    m_title = new char[sizeT];
+    strcpy_s(m_title, sizeT, copy_obj.m_title);
+
+    m_type = copy_obj.m_type;
+
+    int sizeC = strlen(copy_obj.m_country) + 1;
+    m_country = new char[sizeC];
+    strcpy_s(m_country, sizeC, copy_obj.m_country);
+
+    m_price = copy_obj.m_price;
+}
+
 Medicine::~Medicine()
 {
     delete[] m_title;

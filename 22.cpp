@@ -25,5 +25,13 @@ int main()
 
     d.showInfo();
 
+    cout << "-------------------------------------------------------\n\n";
+
+    Medicine k = b;
+    k.setTitle("Aspirin Forte");
+
+    b.showInfo();
+    k.showInfo();
+
     return 0;
 }

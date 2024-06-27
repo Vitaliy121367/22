@@ -20,6 +20,7 @@ class Medicine
 public:
 	Medicine();
 	Medicine(const char* title, TYPES type, const char* country, float price);
+	Medicine(const Medicine& copy_obj);
 	~Medicine();
 
 	void setTitle(const char* title);
