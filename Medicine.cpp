@@ -88,4 +88,25 @@ float Medicine::getPrice() const
 
 void Medicine::showInfo() const
 {
+    cout << "Title: " << m_title << endl;
+    cout << "Type: ";
+    switch (m_type)
+    {
+    case other:
+        cout << "other.\n";
+        break;
+    case pills:
+        cout << "pills.\n";
+        break;
+    case capsules:
+        cout << "capsules.\n";
+        break;
+    case syrope:
+        cout << "syrope.\n";
+        break;
+    default:
+        break;
+    }
+    cout << "Contry: " << m_country << endl;
+    cout << "Price: " << m_price << "UAH.\n\n";
 }
